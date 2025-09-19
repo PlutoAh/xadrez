@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6fakvdp3bqog"]
+
+[ext_resource type="Texture2D" uid="uid://cch0ftkn5honx" path="res://tabuleiro.png" id="1_jyici"]
+[ext_resource type="Script" uid="uid://cb7u8itnnuk56" path="res://tabuleiro.gd" id="2_ugcj2"]
+
+[node name="sceneroot" type="Node2D"]
+
+[node name="tabuleiro" type="Sprite2D" parent="."]
+texture = ExtResource("1_jyici")
+script = ExtResource("2_ugcj2")
