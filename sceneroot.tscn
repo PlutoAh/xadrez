@@ -1,10 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://b6fakvdp3bqog"]
+[gd_scene load_steps=5 format=3 uid="uid://b6fakvdp3bqog"]
 
 [ext_resource type="Texture2D" uid="uid://cch0ftkn5honx" path="res://tabuleiro.png" id="1_jyici"]
 [ext_resource type="Script" uid="uid://cb7u8itnnuk56" path="res://tabuleiro.gd" id="2_ugcj2"]
+[ext_resource type="Texture2D" uid="uid://mmi4a222tpwc" path="res://white pieces.png" id="3_ipuq2"]
+[ext_resource type="Texture2D" uid="uid://cbj57ymktgdja" path="res://black pieces.png" id="4_in4gg"]
 
 [node name="sceneroot" type="Node2D"]
 
 [node name="tabuleiro" type="Sprite2D" parent="."]
 texture = ExtResource("1_jyici")
 script = ExtResource("2_ugcj2")
+
+[node name="WhitePieces" type="Sprite2D" parent="."]
+position = Vector2(0, -114)
+texture = ExtResource("3_ipuq2")
+offset = Vector2(0, -7)
+
+[node name="BlackPieces" type="Sprite2D" parent="."]
+position = Vector2(0, 109)
+texture = ExtResource("4_in4gg")
+offset = Vector2(0, -7)
