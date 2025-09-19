@@ -12,4 +12,6 @@ var quad: quadrado = null
 var movimento:= []
 
 func selecionar():
-	pass
+	for i in movimento:
+		await quad.comando(cor, i)
+	# nessa linha, todos os quadrados disponiveis devem estar na array do tabuleiro e prontos pra acender

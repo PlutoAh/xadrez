@@ -6,17 +6,21 @@ var tab:tabuleiro
 var minha_peca:peca = null
 var coord := Vector2(0,0)
 
-func comando(cmd):
+func comando(cor, cmd):
 	if cmd is Vector2:
 		var a = tab.getquadrado(coord+cmd)
-		if checkquad(a): tab.disponivel.append(a)
+		if checkquad(cor, a): tab.disponivel.append(a)
 	else:
 		var a = tab.getquadrado(coord+traducao[cmd])
-		if checkquad(a):
+		if checkquad(cor, a):
 			tab.disponivel.append(a)
-			a.comando(cmd)
+			a.comando(cor, cmd)
+	return
 
-func checkquad(quad:quadrado):
-	if quad and quad.minha_peca == null:
-		return true
+func checkquad(cor, quad:quadrado):
+	if quad:
+		if quad.minha_peca == null:
+			return true
+		elif quad.minha_peca.cor != cor:
+			tab.disponivel.append(quad)
 	return false
