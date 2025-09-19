@@ -41,29 +41,33 @@ animations = [{
 [node name="sceneroot" type="Node2D"]
 
 [node name="raiz tabuleiro" type="Node2D" parent="."]
+scale = Vector2(1, 0.36)
 
 [node name="tabuleiro" type="Sprite2D" parent="raiz tabuleiro"]
+rotation = 1.516
 texture = ExtResource("1_jyici")
 script = ExtResource("2_ugcj2")
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="raiz tabuleiro/tabuleiro"]
 position = Vector2(-16, -106)
 remote_path = NodePath("../../../WhitePieces")
+update_rotation = false
 update_scale = false
 
 [node name="RemoteTransform2D2" type="RemoteTransform2D" parent="raiz tabuleiro/tabuleiro"]
 position = Vector2(16, 124)
 remote_path = NodePath("../../../BlackPieces")
+update_rotation = false
 update_scale = false
 
 [node name="WhitePieces" type="AnimatedSprite2D" parent="."]
-position = Vector2(-16, -106)
+position = Vector2(104.965, -7.84128)
 sprite_frames = SubResource("SpriteFrames_in4gg")
 animation = &"horse"
 offset = Vector2(0, -15)
 
 [node name="BlackPieces" type="AnimatedSprite2D" parent="."]
-position = Vector2(16, 124)
+position = Vector2(-122.938, 8.19618)
 sprite_frames = SubResource("SpriteFrames_6up5s")
 animation = &"horse"
 offset = Vector2(0, -15)
