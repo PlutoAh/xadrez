@@ -10,11 +10,25 @@ config_version=5
 
 [application]
 
+<<<<<<< HEAD
 config/name="Xadrez"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+=======
+config/name="novoprojeto"
+config/features=PackedStringArray("4.5", "Forward Plus")
+config/icon="res://icon.svg"
+<<<<<<<HEADconfig/name="novoprojeto"
+>>>>>>> 18ea45cbd936e0095a7c220ce7dce08972ad5165
 
 [editor]
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+<<<<<<< HEAD
+=======
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0
+>>>>>>> 18ea45cbd936e0095a7c220ce7dce08972ad5165
