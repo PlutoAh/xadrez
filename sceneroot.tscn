@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://cb31c0422xnek"]
+
+[ext_resource type="Texture2D" uid="uid://cch0ftkn5honx" path="res://tabuleiro.png" id="1_jyici"]
+[ext_resource type="Script" uid="uid://cb7u8itnnuk56" path="res://tabuleiro.gd" id="2_ugcj2"]
+[ext_resource type="Texture2D" uid="uid://mmi4a222tpwc" path="res://white pieces.png" id="3_ipuq2"]
+[ext_resource type="Texture2D" uid="uid://cbj57ymktgdja" path="res://black pieces.png" id="4_in4gg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ipuq2"]
+atlas = ExtResource("3_ipuq2")
+region = Rect2(64, 0, 32, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_in4gg"]
+atlas = ExtResource("4_in4gg")
+region = Rect2(64, 0, 32, 33)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_in4gg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ipuq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_in4gg")
+}],
+"loop": true,
+"name": &"horse",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6up5s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_in4gg")
+}],
+"loop": true,
+"name": &"horse",
+"speed": 5.0
+}]
+
+[node name="sceneroot" type="Node2D"]
+
+[node name="raiz tabuleiro" type="Node2D" parent="."]
+
+[node name="tabuleiro" type="Sprite2D" parent="raiz tabuleiro"]
+self_modulate = Color(1, 1, 1, 0.45490196)
+texture = ExtResource("1_jyici")
+script = ExtResource("2_ugcj2")
+
+[node name="WhitePieces" type="AnimatedSprite2D" parent="."]
+position = Vector2(-16, -106)
+sprite_frames = SubResource("SpriteFrames_in4gg")
+animation = &"horse"
+offset = Vector2(0, -15)
+
+[node name="BlackPieces" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, 124)
+sprite_frames = SubResource("SpriteFrames_6up5s")
+animation = &"horse"
+offset = Vector2(0, -15)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
