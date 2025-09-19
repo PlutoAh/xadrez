@@ -24,3 +24,5 @@ func checkquad(cor, quad:quadrado):
 		elif quad.minha_peca.cor != cor:
 			tab.disponivel.append(quad)
 	return false
+
+#mudancaS
