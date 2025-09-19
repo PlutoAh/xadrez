@@ -1,21 +1,27 @@
 extends Sprite2D
 class_name tabuleiro
 
-const quad = preload("res://quadrado.gd")
+const QUADRADO = preload("uid://ckqwr5tlcguvk")
+
 var quadrados := []
 
 var disponivel = []
 
 func _ready() -> void:
+	var branco = false
 	for i in 8:
-		quadrados[i] = []
+		quadrados.append([])
+		branco = not branco
 		for j in 8:
-			var a = Node.new()
+			var a = QUADRADO.instantiate()
 			add_child(a)
-			a.set_script(quad)
 			a.tab = self
 			a.coord = Vector2(i,j)
+			a.pose()
 			quadrados[i].append(a)
+			branco = not branco
+			if branco:
+				a.modulate = Color(0.699, 0.732, 0.824, 1.0)
 
 func getquadrado(coord:Vector2):
 	if coord.x >= 0 and coord.x < 8 and coord.y >= 0 and coord.y < 8:

@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 class_name quadrado
 
 var traducao = [Vector2(0,-1),Vector2(1,-1),Vector2(1,0),Vector2(1,1),Vector2(0,1),Vector2(-1,1),Vector2(-1,0),Vector2(-1,-1)]
@@ -25,4 +25,5 @@ func checkquad(cor, quad:quadrado):
 			tab.disponivel.append(quad)
 	return false
 
-#mudancaS
+func pose():
+	position = Vector2(-4*32+coord.x*32+16,-4*32+coord.y*32+16)
