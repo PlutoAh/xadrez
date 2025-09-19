@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6fakvdp3bqog"]
+[gd_scene load_steps=9 format=3 uid="uid://cb31c0422xnek"]
 
 [ext_resource type="Texture2D" uid="uid://cch0ftkn5honx" path="res://tabuleiro.png" id="1_jyici"]
 [ext_resource type="Script" uid="uid://cb7u8itnnuk56" path="res://tabuleiro.gd" id="2_ugcj2"]
@@ -43,20 +43,9 @@ animations = [{
 [node name="raiz tabuleiro" type="Node2D" parent="."]
 
 [node name="tabuleiro" type="Sprite2D" parent="raiz tabuleiro"]
+self_modulate = Color(1, 1, 1, 0.45490196)
 texture = ExtResource("1_jyici")
 script = ExtResource("2_ugcj2")
-
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="raiz tabuleiro/tabuleiro"]
-position = Vector2(-16, -106)
-remote_path = NodePath("../../../WhitePieces")
-update_rotation = false
-update_scale = false
-
-[node name="RemoteTransform2D2" type="RemoteTransform2D" parent="raiz tabuleiro/tabuleiro"]
-position = Vector2(16, 124)
-remote_path = NodePath("../../../BlackPieces")
-update_rotation = false
-update_scale = false
 
 [node name="WhitePieces" type="AnimatedSprite2D" parent="."]
 position = Vector2(-16, -106)
@@ -69,3 +58,6 @@ position = Vector2(16, 124)
 sprite_frames = SubResource("SpriteFrames_6up5s")
 animation = &"horse"
 offset = Vector2(0, -15)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
